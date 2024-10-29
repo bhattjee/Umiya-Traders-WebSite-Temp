@@ -1,0 +1,347 @@
+
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Color variables */
+        :root {
+            --brown-50: #fdf8f6;
+            --brown-100: #f2e8e5;
+            --brown-200: #eaddd7;
+            --brown-300: #e0cec7;
+            --brown-400: #d2bab0;
+            --brown-500: #bfa094;
+            --brown-600: #a18072;
+            --brown-700: #977669;
+            --brown-800: #846358;
+            --brown-900: #43302b;
+        }
+
+        /* Header Contact */
+        .header-contact {
+            background-color: #43302b;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        /* Main Navigation */
+        .main-header {
+            position: absolute;
+            top: 41px;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: bolder;
+        }
+
+        .nav-links a:hover {
+            color: var(--brown-200);
+            text-decoration-style: solid;
+            text-decoration-line: underline;
+        }
+
+        /* Hero Carousel */
+        .hero-carousel {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .slide-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .join-button {
+            background-color: var(--brown-600);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+
+        .join-button:hover {
+            background-color: var(--brown-700);
+        }
+
+        /* Company Cards */
+        .company-cards {
+            padding: 80px 0;
+            background-color: var(--brown-50);
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--brown-900);
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            padding: 80px 0;
+        }
+
+        .welcome-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .welcome-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--brown-900);
+        }
+
+        .welcome-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Product Carousel */
+        .product-carousel {
+            padding: 80px 0;
+            background-color: var(--brown-50);
+            position: relative;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .product-card {
+            flex: 0 0 calc(33.333% - 20px);
+            margin: 0 10px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--brown-600);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-button.prev {
+            left: 20px;
+        }
+
+        .carousel-button.next {
+            right: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--brown-800);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--brown-700);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .welcome-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                flex: 0 0 calc(100% - 20px);
+            }
+        }
+   /* Flex container for aligned items in a row */
+.flex-container {
+    display: flex;
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: center;
+    margin-top: 29px;
+    text-align: center;
+}
+
+/* Flex item styling for each image and caption */
+.flex-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px; /* Consistent width for each item */
+    margin-block: 8px;
+}
+
+/* Consistent sizing for images */
+.flex-item img {
+    width: 100%; /* Use the container width */
+    height: 120px; /* Fixed height for alignment */
+    object-fit: cover; /* Keeps image content aligned without distortion */
+    border-radius: 96px;
+    transition: transform 0.3s ease;
+}
+
+.flex-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Caption styling */
+.flex-item p {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+}
