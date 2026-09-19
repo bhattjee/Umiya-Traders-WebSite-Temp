@@ -133,7 +133,7 @@ function setupMobileMenu() {
         }
     }
 
-    mediaQuery.addListener(handleMobileView);
+    mediaQuery.addEventListener('change', handleMobileView);
     handleMobileView(mediaQuery);
 
     // Toggle menu on button click
